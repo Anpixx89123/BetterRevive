@@ -2,8 +2,9 @@
 
 ![Logo](https://i.imgur.com/f2LU8lq.png)
 
-# AlonsoPvP
-Add a new gamemode to your servers similar to the one in the well-known network!.
+# BetterRevive
+Give your players a second change to live!
+Finally a plugin that allows players revive their friends!
 
 ## Resources
 - [Spigot resource](https://www.spigotmc.org/resources/X/)
