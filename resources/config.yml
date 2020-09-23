@@ -1,0 +1,186 @@
+#           ___      _   _           ___         _
+#          | _ ) ___| |_| |_ ___ _ _| _ \_____ _(_)_ _____
+#          | _ \/ -_)  _|  _/ -_) '_|   / -_) V / \ V / -_)
+#          |___/\___|\__|\__\___|_| |_|_\___|\_/|_|\_/\___|
+#                           by AlonsoAliaga
+#          https://www.spigotmc.org/resources/authors/281176/
+#
+
+Messages:
+  No-permission: "&cYou don't have permission to do this."
+  Reloaded: "&aSome messages and options have been reloaded. Other may require a restart!"
+  Invalid-player: "&cPlayer is not online!"
+  Revive-all:
+    None: "&cThere aren't players bleeding.."
+    Revived: "&aYou revived {AMOUNT} player(s)!"
+    You-were-revived: "&6You were revived!"
+  Revive:
+    Not-bleeding: "&cTarget is not bleeding."
+    Revived: "&aYou revived {TARGET}!"
+    You-were-revived: "&6You were revived!"
+  Help:
+    Admin:
+    - "&4 /giveup <target> &f- &cGive up for a player"
+    - "&4 /betterrevive bleeding &f- &cReturns list of player bleeding"
+    - "&4 /betterrevive revive <player> &f- &cRevive a player"
+    - "&4 /betterrevive reviveall &f- &cRevive all players"
+    - "&4 /betterrevive check <player> &f- &cCheck if a player is bleeding"
+    - "&4 /betterrevive reload &f- &cReload configuration (Restart recommended)"
+    User:
+    - "&4 /giveup &f- &cGive up with life"
+    - "&4 /betterrevive check <player> &f- &cCheck if a player is bleeding"
+  Player: "%vault_prefix% {PLAYER}"
+  Bleeding:
+    #Supports PlaceholderAPI
+    Bleeding-broadcast:
+    - "&c{PLAYER}&7 is bleeding.."
+    - "&c{PLAYER}&7 is bleeding so bad.."
+    You-are-bleeding: "&c&lYou are bleeding.."
+    Time-left: "&4&lYou will die in {TIME}. &4Give up with &c/giveup"
+    Disconnected-bleeding:
+    - "&c{PLAYER}&7 disconnected while bleeding.."
+    - "&c{PLAYER}&7 left the game while bleeding.."
+  Reviving:
+    Already-reviving: "&c{SAVIOR} is already reviving this player!"
+    Cannot-revive-while-bleeding: "&cYou cannot revive players while you are bleeding.."
+    You-stopped-reviving-target: "&cYou stopped reviving {TARGET}.."
+    Target-left: "&c{TARGET} left the server when you were reviving him.."
+    Already-revived: "&cThis player has already been revived!"
+    Character: "▮"
+    #Color of completed chars.
+    Color-completed: "&a"
+    #Color of remaining chars.
+    Color-remaining: "&7"
+    Savior:
+      Title: "{PROGRESS}"
+      Subtitle: "&6Reviving &c{TARGET}"
+    Target:
+      Title: "{PROGRESS}"
+      Subtitle: "&c{PLAYER} &6is reviving you"
+  Revived:
+    Revive-broadcast:
+    - "&c{PLAYER}&7 has been saved by &a{SAVIOR}&7!"
+    - "&c{PLAYER}&7 has been revived by &a{SAVIOR}&7!"
+    - "&a{SAVIOR}&7 revived &c{PLAYER}&7!"
+    Revive-broadcast-no-player:
+    - "&c{PLAYER}&7 has been saved!"
+    - "&c{PLAYER}&7 was revived!"
+    Savior:
+      Title: "&6&lPlayer revived!"
+      Subtitle: "&aYou revived &c{TARGET}!"
+    Target:
+      Title: "&6&lYou revived!"
+      Subtitle: "&c{PLAYER} &arevived you!"
+  Placeholders:
+    Status:
+      Alive: "&aAlive"
+      Bleeding: "&cBleeding"
+      Bleeding-format: "&cDies in {TIME}"
+      Reviving: "&6Reviving"
+      Reviving-format: "&6Reviving in {TIME}"
+      Dead: "&4Dead"
+  Commands:
+    Bleeding:
+      No-players-bleeding: "&cThere aren't players bleeding.."
+      Location: "&7({WORLD}: {X} {Y} {Z})"
+      Format: "&c{PLAYER} &7is bleeding.. &e(&b{TIME} left&e) {LOCATION}"
+      Messages:
+      - "&c&lPlayer bleeding:"
+      - "{PLAYERS}"
+      - "&eThere are {AMOUNT} players bleeding.."
+    Check:
+      Not-bleeding: "&cTarget is not bleeding.."
+      Already-revived: "&cTarget has been revived already!"
+      Location: "&7({WORLD}: {X} {Y} {Z})"
+      Bleeding: "&c{PLAYER} &7is bleeding.. &e(&b{TIME} left&e) {LOCATION}"
+    Revive:
+      Not-bleeding: "&cTarget is not bleeding.."
+      Already-revived: "&cTarget has been revived already!"
+      Target-revived: "&aYou revived {TARGET}."
+      You-were-revived: "&6You were revived"
+    Revive-all:
+      Not-bleeding: "&cThere aren't players bleeding.."
+      Revived-all: "&aYou revived {AMOUNT} players."
+      You-were-revived: "&6You were revived"
+  Give-up:
+    Target-not-bleeding: "&cTarget is not bleeding.."
+    You-are-not-bleeding: "&cYou are not bleeding.."
+    Target-already-revived: "&cTarget has been already revived!"
+    You-are-already-revived: "&cYou have been already revived!"
+    Other-cancelled: "&cGive up attempt was cancelled by other plugin!"
+    Self-cancelled: "&cGods don't want you to give up!"
+    Target-gave-up: "&6You made {TARGET} gave up.."
+    You-gave-up: "&6You gave up.."
+
+Options:
+  #If disabled, "bleeding" and "revived" messages will be sent to all players in the world only.
+  Global-broadcast: true
+  #Time in seconds the player will bleed before dying.
+  #It MUST BE GREATER THAN revive time.
+  Bleeding-time: 15
+  #Required time in seconds to revive a player. Minimum 2 seconds, maximum 60 seconds.
+  Revive-time: 5
+  #Amount of characters that will be used in reviving progress bar. Minimum 5, maximum 1000
+  Revive-amount-characters: 20
+  Block:
+    #If enabled, players that are bleeding cannot place/break blocks.
+    Place-break: true
+    #If enabled, players that are bleeding cannot consume items.
+    Consume: true
+    #If enabled, players that are bleeding cannot drop items.
+    Drop: true
+    #If enabled, players that are bleeding cannot pick items.
+    Pick: true
+    #If enabled, players that are bleeding cannot interact with other entities.
+    Interact-at-entity: true
+    #If enabled, players that are bleeding cannot interact.
+    Interact: true
+    #If enabled, players that are bleeding cannot permission commands except from whitelisted commands.
+    Commands: true
+    Whitelisted-commands:
+    - "/tell"
+    - "/msg"
+    - "/giveup"
+    - "/betterrevive"
+    - "/brevive"
+  Worlds:
+    #Mode can be WHITELIST, BLACKLIST, ALL and NONE.
+    #If WHITELIST players can bleed in listed worlds.
+    #If BLACKLIST players cannot bleed in listed worlds.
+    #If ALL players will bleed in all worlds.
+    #If NONE players won't bleed in any world. However, they can using DeveloperAPI
+    Mode: "ALL"
+    List:
+    - "world"
+    - "world_nether"
+
+Permissions:
+  #Permission to use /giveup command
+  Give-up: "betterrevive.giveup"
+  #Permission to use /giveup <player> command
+  Give-up-others: "betterrevive.giveup.others"
+  Admin: "betterrevive.admin"
+  #Permission to revive player using command. CANNOT BE "none"
+  Admin-revive: "betterrevive.admin.revive"
+  #Permission to bleed when you receive fatal damage.
+  Bleed: "betterrevive.bleed"
+  #Permission to revive player using command. Set to "none" to not require permission.
+  Check: "betterrevive.check"
+  #Permission to see player location in command /betterrevive check.  Set to "none" to not require permission.
+  Check-location: "betterrevive.check.location"
+  #Permission to see player bleeding.  Set to "none" to not require permission.
+  Bleeding: "betterrevive.bleeding"
+  #Permission to see player location in command /betterrevive bleeding.  Set to "none" to not require permission.
+  Bleeding-location: "betterrevive.bleeding.location"
+
+Updates:
+  #Auto update configuration? Enabling will delete comments.
+  Auto-update-configuration: true
+  #Check for updates? Recommended to keep it enabled.
+  Check-updates: true
+  #Notify updates when player with permission joins the server?
+  Notify-updates: true
+  #Permission required to receive update message.
+  Permission: "betterrevive.update"
+  #Message to send when update is found.
+  Message: "&4[BetterRevive] &eA new update has been found! You are using version {CURRENT}. Download version {NEW} here &c{LINK}"
