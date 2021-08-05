@@ -7,9 +7,9 @@
 #
 
 Messages:
-  No-permission: "&cYou don't have permission to do this."
+  No-permission: "&c EHHH VOLEVI."
   Reloaded: "&aSome messages and options have been reloaded. Other may require a restart!"
-  Invalid-player: "&cPlayer is not online!"
+  Invalid-player: "&c cului che cerchi non e nel server!"
   Revive-all:
     None: "&cThere aren't players bleeding.."
     Revived: "&aYou revived {AMOUNT} player(s)!"
